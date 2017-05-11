@@ -1,0 +1,128 @@
+body,html{
+    height: 100%;
+}
+/*搜索栏开始*/
+.jd_topBar{
+    height: 45px;
+    width: 100%;
+    background:url("../images/header-bg.png") repeat-x;
+    position: absolute;
+    border-bottom:1px solid #ccc;
+}
+.jd_topBar a[class^="icon"]{
+    position: absolute;
+    width: 40px;
+    height: 44px;
+    top:0;
+    padding:12px 10px;
+    background-origin: content-box;
+    background-clip:content-box;
+}
+.jd_topBar .icon_back{
+    background-position:-20px 0;
+    left:0;
+}
+.jd_topBar .icon_menu{
+    background-position:-60px 0;
+    right:0;
+}
+.jd_topBar form{
+    width: 100%;
+    padding-left:40px;
+    padding-right:40px;
+}
+.jd_topBar form input{
+    width: 100%;
+    padding:0 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border:1px solid #e0e0e0;
+    height: 30px;
+    margin-top:7px;
+
+}
+/*搜索栏结束*/
+/*分类开始*/
+.jd_category{
+    width: 100%;
+    height: 100%;
+    padding-top:45px;
+}
+.jd_cate_left{
+    width: 90px;
+    height: 100%;
+    float: left;
+    overflow:hidden;
+}
+.jd_cate_right{
+    height: 100%;
+    overflow: hidden;
+}
+
+/*分类结束*/
+/*分类左边大盒子开始*/
+.jd_cate_left ul{
+    width: 100%;
+}
+.jd_cate_left ul li{
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    border-bottom:1px solid #ccc;
+    border-right:1px solid #ccc;
+    background:#f3f4f5;
+}
+.jd_cate_left ul li.now{
+    background:#fff;
+    border-right:none;
+}
+.jd_cate_left ul li a{
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+.jd_cate_left ul li.now a{
+    color:#d8505c;
+}
+/*分类左边大盒子结束*/
+
+/*分类右边大盒子开始*/
+.jd_cate_right_con{
+    width: 100%;
+    padding:0 10px;
+}
+.jd_cate_right_con .banner{
+    display:block;
+    width: 100%;
+    margin-top:10px;
+}
+.jd_cate_right_con .banner img{
+    width: 100%;
+    display:block;
+}
+.cate_product{
+    width: 100%;
+    margin-top:10px;
+}
+.cate_product h3{
+    font-size:12px;
+}
+.cate_product ul{
+    width: 100%;
+}
+.cate_product ul li{
+    float:left;
+    width: 33.3333%;
+    text-align: center;
+}
+.cate_product ul li a{
+    width: 100%;
+    display:block;
+    padding-top:10px;
+}
+.cate_product ul li a img{
+    width: 62px;
+    height: 62px;
+}
+
+/*分类右边大盒子结束*/

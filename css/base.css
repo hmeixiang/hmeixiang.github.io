@@ -1,0 +1,54 @@
+html,body,div,ul,li,ol,input,textarea,span,a,img,p,h1,h2,h3,h4,h5,h6,form,dl,dt{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-box-sizing:border-box;
+    }
+.clearfix::before,.clearfix::after{
+    content:"";
+    clear:both;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+}
+input,textarea{
+    outline-style: none;
+    outline:none;
+    -webtkit-appearance:none;
+    border:none;
+    resize:none;
+}
+ul,li{
+    list-style: none;
+}
+a{  
+    color:#333;
+    text-decoration: none;
+}
+body{
+    font-size:14px;
+    font-family: "microsoft YaHei","sans-serif";
+    color:#333;
+}
+img{
+    vertical-align: middle;
+}
+
+[class^=icon]{
+    background-image:url("../images/sprites.png");
+    background-repeat:no-repeat;
+    background-size:200px 200px;
+}
+.fr{
+    float: right;
+}
+.fl{
+    float: left;
+}
+.r_b{
+    border-right:1px solid #e0e0e0;
+}
+.b_b{
+    border-bottom:1px solid #e0e0e0;
+}

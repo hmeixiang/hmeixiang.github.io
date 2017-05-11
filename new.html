@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .box{
+                margin-top:100px;
+                width: 100%;
+                height: 50px;
+                overflow: hidden;
+                position: relative;
+            }
+            ul{
+                list-style: none;
+                width: 5000%;
+                position: absolute;
+
+            }
+            ul li {
+                float: left;
+            }
+            ul li a{
+                display: block;
+                height: 50px;
+                width: 90px;
+                text-align: center;
+                line-height: 50px;
+                border:1px solid #ccc;
+                font-size:12px;
+                color:#ccc;
+                text-decoration: none;
+            }
+
+        </style>
+        <script type="text/javascript" src="js/common.js"></script>
+    </head>
+    <body>
+    <div class="box">
+       <ul>
+                <li class=""><a href="javascript:;">热门推荐</a></li>
+                <li class="now"><a href="javascript:;">潮流女装</a></li>
+                <li class=""><a href="javascript:;">品牌男装</a></li>
+                <li class=""><a href="javascript:;">内衣配饰</a></li>
+                <li class=""><a href="javascript:;">家用电器</a></li>
+                <li class=""><a href="javascript:;">电脑办公</a></li>
+                <li class=""><a href="javascript:;">手机数码</a></li>
+                <li class=""><a href="javascript:;">母婴频道</a></li>
+                <li class=""><a href="javascript:;">图书</a></li>
+                <li class=""><a href="javascript:;">家居家纺</a></li>
+                <li class=""><a href="javascript:;">居家生活</a></li>
+                <li class=""><a href="javascript:;">家具建材</a></li>
+                <li class=""><a href="javascript:;">热门推荐</a></li>
+                <li class=""><a href="javascript:;">潮流女装</a></li>
+                <li class=""><a href="javascript:;">品牌男装</a></li>
+                <li class=""><a href="javascript:;">内衣配饰</a></li>
+                <li class=""><a href="javascript:;">家用电器</a></li>
+                <li class=""><a href="javascript:;">电脑办公</a></li>
+                <li class=""><a href="javascript:;">手机数码</a></li>
+                <li class=""><a href="javascript:;">母婴频道</a></li>
+                <li class=""><a href="javascript:;">图书</a></li>
+                <li class=""><a href="javascript:;">家居家纺</a></li>
+                <li class=""><a href="javascript:;">居家生活</a></li>
+                <li class=""><a href="javascript:;">家具建材</a></li>
+       </ul>
+    </div>
+    <script type="text/javascript">
+            var parentBox = document.querySelector(".box");
+            var childBox = parentBox.children[0];
+            var w = parentBox.offsetWidth;
+            var W = childBox.offsetWidth;
+            //缓冲距离
+            var distance = 100;
+            //最大定位距离
+            var maxPositon = 0;
+            //最小定位距离
+            var minPosition = w-W;
+            //最大滑动距离
+            var maxSwipe = maxPositon+distance;
+            //最小滑动距离
+            var minSwipe = minPosition-distance;
+            //还需要滑动相关变量
+            var start = 0;//记录开始滑动的位置
+            var move = 0;//记录滑动时的位置
+            var isMove = false;//记录是否滑动
+            var moveX = 0;//记录滑动的距离
+            var currX = 0;//记录当前的位置
+            childBox.addEventListener("touchstart", function(){
+                start = event.touches[0].clientX;
+            })
+            childBox.addEventListener("touchmove", function(){
+                move = event.touches[0].clientX;
+                moveX = move - start;
+                if(moveX+currX>minSwipe&&moveX+currX<maxSwipe){
+                    childBox.style.left=moveX+currX+"px";
+                }
+            })
+            childBox.addEventListener("touchend", function(){
+                if(moveX+currX>maxPositon){
+                    currX = maxPositon
+                }else if(moveX+currX<minPosition){
+                    currX = minPosition
+                }else{
+                    currX = moveX+currX;
+                }
+                childBox.style.left=moveX+currX+"px";
+            })
+    </script>
+    </body>
+</html>
